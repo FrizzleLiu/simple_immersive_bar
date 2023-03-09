@@ -8,28 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.DialogFragment
+import com.frizzle.immersivebar.immersiveStatusBar
 
 /**
  * Created by Frizzle
  * on 2023/3/9
  */
-open class ImmersiveTopDialogFragment(@LayoutRes contentLayoutId: Int) : DialogFragment(contentLayoutId) {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL, R.style.ImmersiveBarDialog)
-    }
-
+open class ImmersiveBottomDialogFragment(@LayoutRes contentLayoutId: Int) : DialogFragment(contentLayoutId) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val attributes = dialog?.window?.attributes
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         attributes?.run {
-            windowAnimations = R.style.TopDialog
+            windowAnimations = R.style.BottomDialog
             width = ViewGroup.LayoutParams.MATCH_PARENT
             height = ViewGroup.LayoutParams.WRAP_CONTENT
-            gravity = Gravity.TOP
+            gravity = Gravity.BOTTOM
         }
-        immersiveStatusBar()
+
+        immersiveNavigationBar()
     }
 }
