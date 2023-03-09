@@ -41,7 +41,7 @@ fun DialogFragment.immersiveNavigationBar(navigationBarColor: Int = Color.WHITE)
     //需要设置这个才能设置状态栏和导航栏颜色
     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-        window.isStatusBarContrastEnforced = false
+        window.isNavigationBarContrastEnforced = false
     }
     window.navigationBarColor = navigationBarColor
     window.decorView.systemUiVisibility = uiFlags
@@ -61,10 +61,13 @@ fun DialogFragment.immersiveNavigationBar(navigationBarColor: Int = Color.WHITE)
 /**
  * 隐藏状态栏
  */
-fun DialogFragment.immersiveStatusBar(statusBarColor: Int = Color.WHITE) {
+fun DialogFragment.immersiveStatusBar(statusBarColor: Int = Color.TRANSPARENT) {
     val window = dialog?.window ?: return
     //防止系统栏隐藏时内容区域大小发生变化
     var uiFlags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+    //Activity全屏显示，但状态栏不会被隐藏覆盖，状态栏依然可见，Activity顶端布局部分会被状态栏遮住。
+    uiFlags = uiFlags or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
     //需要设置这个才能设置状态栏和导航栏颜色
     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {

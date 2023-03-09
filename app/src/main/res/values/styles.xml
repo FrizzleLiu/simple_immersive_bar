@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="BottomDialog">
         <item name="android:windowEnterAnimation">@anim/bottom_anim_enter</item>
         <item name="android:windowExitAnimation">@anim/bottom_anim_exit</item>
@@ -11,11 +12,5 @@
         <item name="android:windowExitAnimation">@anim/top_anim_exit</item>
     </style>
 
-    <!--沉浸式Dialog样式-->
-    <style name="ImmersiveBarDialog" parent="AlertDialog.AppCompat">
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsFloating">false</item>
-    </style>
+
 </resources>
