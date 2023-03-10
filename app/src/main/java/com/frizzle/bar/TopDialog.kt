@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.frizzle.immersivebar.ImmersiveTopBarDialog
 
 /**
- * Created by liuweijun
+ * Created by Frizzle
  * on 2023/3/9
  */
 class TopDialog(mContext: Context) : ImmersiveTopBarDialog(mContext) {

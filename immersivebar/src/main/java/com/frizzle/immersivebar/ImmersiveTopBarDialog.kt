@@ -20,7 +20,7 @@ open class ImmersiveTopBarDialog : AlertDialog {
         super.onCreate(savedInstanceState)
         this.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         this.window?.attributes?.run {
-            windowAnimations = R.style.BottomDialog
+            windowAnimations = R.style.TopDialog
             width = ViewGroup.LayoutParams.MATCH_PARENT
             height = ViewGroup.LayoutParams.WRAP_CONTENT
             gravity = Gravity.TOP
