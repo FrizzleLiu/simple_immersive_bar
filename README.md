@@ -20,7 +20,7 @@ Android 极简实现沉浸式状态栏/导航栏
 
 #### 效果图：
 
-[效果图](https://github.com/FrizzleLiu/simple_immersive_bar/tree/main/app/gif/preview.gif)
+https://github.com/FrizzleLiu/simple_immersive_bar/tree/main/app/gif/preview.gif
 
 ### 使用
 
